@@ -1,0 +1,31 @@
+.wappler-temp {}
+.style1 {}
+.style2 {
+    margin-left: -49px;
+    margin-right: 72px
+}
+.style3 {
+    padding-left: 0px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start
+}
+.style4 {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+            -webkit-box-orient: horizontal;
+            -webkit-box-direction: reverse;
+                -ms-flex-direction: row-reverse;
+                    flex-direction: row-reverse;
+                    display: none
+}
+.style5 {}
+.style6 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex
+}

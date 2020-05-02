@@ -1,0 +1,39 @@
+.medium-editor-element::before,
+.medium-editor-element::after {
+    display: table;
+    clear: both;
+    content: '';
+}
+
+.medium-editor-element figcaption[data-placeholder]:empty::after {
+    content: attr(data-placeholder);
+}
+
+.medium-editor-image-upload-drop::before {
+    content: '';
+    display: block;
+    height: 1em;
+    border-top: 1px dashed red;
+}
+
+.medium-editor-image-upload-left {
+    float: left;
+    margin-right: 1em;
+    text-align: left;
+}
+
+.medium-editor-image-upload-right {
+    float: right;
+    margin-left: 1em;
+    text-align: right;
+}
+
+.medium-editor-image-upload-full,
+.medium-editor-image-upload-center {
+    text-align: center;
+}
+
+.medium-editor-image-upload-full figure,
+.medium-editor-image-upload-full img {
+    width: 100%;
+}
