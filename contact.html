@@ -54,7 +54,7 @@
 					<h3 class="text-primary align-self-start">If you would like to signup to receive our coupons and specials please enter your name and email address here. We dont sell them and will only email when we have something to offer.</h3>
 					<section>
 						<div class="container mt-lg-3">
-							<form is="dmx-serverconnect-form" id="serverconnectform2" method="post" action="dmxConnect/api/contactForm.php" dmx-generator="bootstrap4" dmx-form-type="horizontal">
+							<form is="dmx-serverconnect-form" id="serverconnectform2" method="post" action="dmxConnect/api/contactForm.php" dmx-generator="bootstrap4" dmx-form-type="horizontal" dmx-on:success="bgvideo1.serverconnectform2.reset()">
 								<div class="form-group row">
 									<label for="inp_name" class="col-sm-2 col-form-label">Name</label>
 									<div class="col-sm-10">
@@ -98,7 +98,7 @@
 					<footer class="bg-transparent">
 						<div class="rounded-sm h-auto mw-100 text-left container-fluid">
 							<div class="row">
-								<div class="bg-secondary col-xl-9 offset-xl-2 text-xl-center w-25 col-12">
+								<div class="bg-secondary text-xl-center col-12 col-xl col-sm-12 w-auto">
 									<nav
 										class="navbar navbar-expand-lg p-0 navbar-light bg-secondary text-lg-justify text-xl-center text-left small justify-content-sm-start flex-sm-nowrap align-content-md-end flex-md-wrap align-items-md-center justify-content-md-between">
 
