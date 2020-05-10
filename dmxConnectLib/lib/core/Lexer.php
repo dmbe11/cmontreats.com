@@ -33,6 +33,7 @@ class Lexer
 	);
 
     public function parse($expression) {
+		$token = NULL;
 		$tokens = array();
 
 		$this->exp = $expression;
@@ -43,18 +44,18 @@ class Lexer
 			$this->char = $this->read();
 
 			if ($op && $this->detect_string()) {
-				$tokens[] = new Token(Token::STRING, $this->read_string());
+				$tokens[] = $token = new Token(Token::STRING, $this->read_string());
 				$op = FALSE;
 			} elseif ($op && $this->detect_number()) {
-				$tokens[] = new Token(Token::NUMBER, $this->read_number());
+				$tokens[] = $token = new Token(Token::NUMBER, $this->read_number());
 				$op = FALSE;
 			} elseif ($op && $this->detect_identifier()) {
 				//$value = $this->readIdent();
 				//$tokens[] = new Token($this->is($this->read(), '(') ? Token::METHOD : Token::IDENTIFIER, $value);
-				$tokens[] = new Token(Token::IDENTIFIER, $this->read_identifier());
+				$tokens[] = $token = new Token(Token::IDENTIFIER, $this->read_identifier());
 				$op = FALSE;
-			} elseif ($op && $this->detect_regexp()) {
-				$tokens[] = new Token(Token::REGEXP, $this->read_regexp());
+			} elseif ($op && $this->detect_regexp() && ($token->value == '(' || $token->value == ',' || $token->value == '?' || $token->value == ':') && $this->test_regexp()) {
+				$tokens[] = $token = new Token(Token::REGEXP, $this->read_regexp());
 				$op = FALSE;
 			} elseif ($this->is_whitespace()) {
 				// skip character
@@ -70,7 +71,7 @@ class Lexer
 					throw new \Exception('Unexpected character ' . $this->char . ' at column ' . $this->pos . ' in expression {{' . $this->exp . '}}');
 				}
 
-				$tokens[] = new Token(Token::OPERATOR, $this->consume($n));
+				$tokens[] = $token = new Token(Token::OPERATOR, $this->consume($n));
 				$op = TRUE;
 			}
 		}
@@ -206,5 +207,21 @@ class Lexer
 		}
 
 		throw new \Exception('Unterminated RegExp in expression {{' . $this->exp . '}}');
+	}
+
+	private function test_regexp() {
+		$start = $this->pos;
+		$ok = TRUE;
+
+		try {
+			$this->read_regexp();
+		} catch (\Exception $e) {
+			$ok = FALSE;
+		}
+
+		$this->pos = $start;
+		$this->char = '/';
+
+		return $ok;
 	}
 }

@@ -2,6 +2,7 @@
 <html>
 
 <head>
+	<script src="dmxAppConnect/dmxAppConnect.js"></script>
 	<meta charset="UTF-8">
 	<title>C'MoN Gourmet Treats</title>
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -15,12 +16,12 @@
 	<link rel="stylesheet" href="bootstrap/4/css/bootstrap.min.css" />
 </head>
 
-<body id="">
+<body id="index" is="dmx-app">
 	<header class="container-fluid">
 		<div class="container-sm">
 			<div class="row">
 				<nav class="navbar navbar-expand-lg justify-content-between style5 sticky-top w-100 navbar-dark bg-transparent">
-					<a class="navbar-brand" href="#"><img src="assets/img/CmonLogoSM.png" wappler-command="updateImage" class="img-thumbnail"></a>
+					<a class="navbar-brand" href="#"><img src="assets/img/CmonLogoSM.png" wappler-command="updateImage" class="img-thumbnail bg-light"></a>
 					<button class="navbar-toggler bg-info" type="button" data-toggle="collapse" data-target="#navbar1_collapse" aria-controls="navbar1_collapse" aria-expanded="false" aria-label="Toggle navigation">
 						<span class="navbar-toggler-icon"></span>
 					</button>
@@ -33,9 +34,9 @@
 						</div>
 					</div>
 					<div class="navbar-nav justify-content-end d-none d-lg-flex ml-md-auto w-auto">
-						<a class="nav-item nav-link" href="#"><i class="fa fa-slack"></i></a>
-						<a class="nav-item nav-link" href="#"><i class="fa fa-twitter"></i></a>
-						<a class="nav-item nav-link" href="#"><i class="fa fa-facebook"></i></a>
+						<a class="nav-item nav-link order-lg-last" href="#"><i class="fa fa-slack"></i></a>
+						<a class="nav-item nav-link order-lg-1" href="#"><i class="fa fa-twitter"></i></a>
+						<a class="nav-item nav-link order-lg-first" href="https://www.facebook.com/cmontreats/"><i class="fa fa-facebook"></i></a>
 					</div>
 				</nav>
 			</div>
@@ -44,29 +45,26 @@
 		<div class="container">
 			<div class="row">
 				<div class="col">
-					<p class="text-justify">C'MoN is a family owned business created with the desire to provide high quality treats for our family pets. We own four dogs, a Weimaraner and three Great Danes named Charley, Molly, Natalya, and Madeline.
-						Molly has always been a healthy and vibrant dog but when she was still a puppy we discovered when she was given high processed treats, she would have an adverse reaction. In the worst cases she would have severe stomach cramps
-						and show she was in pain.</p>
+					<p class="text-justify text-white">CMoN Gourmet Treats is family owned and operated providing high quality treats for people who love their pets. C'MoN started small with our dogs as our initial clients. We have owned several dogs
+						over the
+						years and today we share our
+						home with, a Weimaraner and two Great Danes. CMoN’s name came from the first initial of three of our dogs, Charley, Molly, and Natalia.&nbsp;</p>
 				</div>
 			</div>
 		</div>
 		<div class="container-sm">
-			<video is="dmx-video" id="video1" src="assets/vid/CMoNviitIntro.mp4" autoplay playinview autopause loop muted width="100%"></video>
+			<video is="dmx-video" id="video1" src="assets/vid/covervid.mov" autoplay playinview autopause loop muted width="100%" poster="assets/img/vidStart.jpg" preload="auto"></video>
 		</div>
 		<div class="container bg-transparent">
 			<div class="row bg-transparent">
 				<div class="col text-secondary bg-transparent">
 					<div class="row text-secondary bg-transparent">
 						<div class="col bg-transparent">
-							<p class="text-justify text-white">We quickly realized the treats were to blame and started looking for an alternative. After doing research, I discovered that feeding single ingredient treats might stop the problem. So,
-								after testing a few options we discovered freeze dried single ingredient treats.&nbsp; These treats did not cause the issues&nbsp; but I found the quality to be inconsistent and in my opinion they were expensive. We
-								thought for what we were paying for these treats we should either get more or&nbsp; higher quality. Then we realized that most of the options were from organ meat, which was really difficult to tell about the quality
-								and thought it would be better to start with high quality food&nbsp; that had information regarding where the meat came from..</p>
-							<p class="text-justify text-white">After all of this we thought, why don't we make our own and if we could maybe sell them on a small scale. So we started making out own treats from high quality protein’s like wild caught
-								Sockeye salmon, not chum, chicken breast tenderloin fillets, and we even experimented with Wagyu
-								beef, but if you every purchased Wagyu beef you know it is not cheap and difficult to get.&nbsp; After, experimenting with different proteins, I narrowed my list to a couple sources that our pets love. We puchase our
-								meat
-								from the highest quality local sources and keep records of where we source every batch. Try a package or two, your pets&nbsp; will love you for it.</p>
+							<p class="text-justify text-white">Molly has always been a healthy Weimaraner, but when she was still a puppy, we determined that processed treats made her sick. After doing research, we learned that feeding her treats
+								with a single-ingredient stopped the health issues and she liked them better. The best single-ingredient treats, that do not require processing, are freeze-dried.&nbsp;</p>
+							<p class="text-justify text-white">One day we wondered if we could make treats on our own to better control the protein source and quality. So, we started making out own treats from high-quality protein like wild-caught
+								Sockeye salmon, not chum, and chicken breast tenderloin fillets. We purchase our meat from the highest quality local sources, keeping records of where we purchased every batch. Try a package or two, your pets will love
+								you for it.</p>
 						</div>
 					</div>
 				</div>

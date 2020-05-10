@@ -17,9 +17,13 @@
 	<link rel="stylesheet" href="dmxAppConnect/dmxMediumEditor/dmxMediumEditor.css" />
 	<script src="dmxAppConnect/dmxMediumEditor/dmxMediumEditor.js" defer=""></script>
 	<link rel="stylesheet" href="dmxAppConnect/dmxMediumEditor/themes/default.css" />
+	<link rel="stylesheet" href="dmxAppConnect/dmxValidator/dmxValidator.css" />
+	<script src="dmxAppConnect/dmxValidator/dmxValidator.js" defer=""></script>
+	<link rel="stylesheet" href="dmxAppConnect/dmxMediumEditorImageUpload/dmxMediumEditorImageUpload.css" />
+	<script src="dmxAppConnect/dmxMediumEditorImageUpload/dmxMediumEditorImageUpload.js" defer=""></script>
 </head>
 
-<body id="cmonTemplate" is="dmx-app">
+<body id="cmonContact02" is="dmx-app">
 	<header>
 		<div class="container-sm bg-transparent">
 			<div class="row bg-transparent">
@@ -53,39 +57,28 @@
 				<main>
 					<h3 class="text-primary align-self-start">If you would like to signup to receive our coupons and specials please enter your name and email address here. We dont sell them and will only email when we have something to offer.</h3>
 					<section>
-						<div class="container mt-lg-3">
-							<form is="dmx-serverconnect-form" id="serverconnectform2" method="post" action="dmxConnect/api/contactForm.php" dmx-generator="bootstrap4" dmx-form-type="horizontal" dmx-on:success="bgvideo1.serverconnectform2.reset()">
-								<div class="form-group row">
-									<label for="inp_name" class="col-sm-2 col-form-label">Name</label>
-									<div class="col-sm-10">
-										<input type="text" class="form-control" id="inp_name" name="name" aria-describedby="inp_name_help" placeholder="Enter Name">
-									</div>
-								</div>
-								<div class="form-group row">
-									<label for="inp_email" class="col-sm-2 col-form-label">Email</label>
-									<div class="col-sm-10">
-										<input type="text" class="form-control" id="inp_email" name="email" aria-describedby="inp_email_help" placeholder="Enter Email">
-									</div>
-								</div>
-								<div class="form-group row">
-									<label for="inp_phone" class="col-sm-2 col-form-label">Phone</label>
-									<div class="col-sm-10">
-										<input type="text" class="form-control" id="inp_phone" name="phone" aria-describedby="inp_phone_help" placeholder="Enter Phone">
-									</div>
-								</div>
-								<div class="form-group row">
-									<label for="inp_message" class="col-sm-2 col-form-label">Message</label>
-									<div class="col-sm-10">
-										<textarea id="inp_message" name="message" class="form-control" is="dmx-medium-editor" placeholder="Please enter your message"></textarea>
-									</div>
-								</div>
-								<div class="form-group row">
-									<div class="col-sm-10 offset-2">
-										<button type="submit" class="btn btn-primary btn-block text-center">Save</button>
-									</div>
-								</div>
-							</form>
-						</div>
+						<form is="dmx-serverconnect-form" id="serverconnectform1" method="post" action="dmxConnect/api/formtoemail.php" dmx-generator="bootstrap4" dmx-form-type="vertical" dmx-on:success="bgvideo1.serverconnectform1.reset()">
+							<div class="form-group">
+								<label for="inp_name">Name</label>
+								<input type="text" class="form-control" id="inp_name" name="name" aria-describedby="inp_name_help" placeholder="Enter Name">
+							</div>
+							<div class="form-group">
+								<label for="inp_email">Email</label>
+								<input type="email" class="form-control" id="inp_email" name="email" aria-describedby="inp_email_help" placeholder="Enter Email">
+							</div>
+							<div class="form-group">
+								<label for="inp_message">Message</label>
+								<textarea id="inp_message" name="message" class="form-control"></textarea>
+							</div>
+							<div class="form-group">
+								<button type="submit" class="btn btn-primary btn-block">Save
+									<span class="spinner-border" role="status" dmx-show="state.executing"></span>
+								</button>
+							</div>
+							<div class="form-group">
+								<button type="reset" class="btn btn-block bg-secondary">Cancel</button>
+							</div>
+						</form>
 					</section>
 				</main>
 			</div>
@@ -102,7 +95,7 @@
 									<nav
 										class="navbar navbar-expand-lg p-0 navbar-light bg-secondary text-lg-justify text-xl-center text-left small justify-content-sm-start flex-sm-nowrap align-content-md-end flex-md-wrap align-items-md-center justify-content-md-between">
 
-										<span class="navbar-text bg-transparent "><i class="fa fa-envelope fa-large"></i>daniel.bell@cmontreats.com</span>
+										<span class="navbar-text bg-transparent "><i class="fa fa-envelope fa-large"></i> daniel.bell@cmontreats.com</span>
 
 										<span class="navbar-text bg-transparent "><i class="fa fa-map-marker"></i> Coumbus, Ohio</span><span class="navbar-text bg-transparent ">© Copyright 2020. All Rights Reserved.</span><span
 											class="navbar-text bg-transparent o"><i class="fa fa-phone"></i> Fax 614.957.7117</span>

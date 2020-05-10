@@ -1,0 +1,109 @@
+<!doctype html>
+<html>
+
+<head>
+	<script src="../dmxAppConnect/dmxAppConnect.js"></script>
+	<meta charset="UTF-8">
+	<title>Purchase 2oz Chicken Breast</title>
+	<script src="../js/jquery-3.4.1.slim.min.js"></script>
+	<link rel="stylesheet" href="../fontawesome4/css/font-awesome.min.css" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="css/global.css" />
+	<link rel="stylesheet" href="css/normalize.css" />
+	<link rel="stylesheet" href="../bootstrap/4/css/bootstrap.min.css" />
+	<script src="../dmxAppConnect/dmxBootstrap4Navigation/dmxBootstrap4Navigation.js" defer=""></script>
+	<link rel="stylesheet" href="../css/style.css" />
+</head>
+<!-- Load Stripe.js on your website. -->
+<script src="https://js.stripe.com/v3"></script>
+
+<!-- Create a button that your customers click to complete their purchase. Customize the styling to suit your branding. -->
+
+<body>
+	<header>
+		<div class="container-lg">
+			<div class="row">
+				<div class="col">
+					<nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-between">
+						<a class="navbar-brand mr-auto ml-auto" href="#">Navbar</a>
+						<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar1_collapse" aria-controls="navbar1_collapse" aria-expanded="false" aria-label="Toggle navigation">
+							<span class="navbar-toggler-icon"></span>
+						</button>
+						<div class="collapse navbar-collapse justify-content-center" id="navbar1_collapse">
+							<div class="navbar-nav">
+								<a class="nav-item nav-link active" href="#">Home</a>
+								<a class="nav-item nav-link" href="#">About</a>
+								<a class="nav-item nav-link" href="#">Contact</a>
+							</div>
+						</div>
+						<div class="navbar-nav justify-content-end d-none d-lg-flex ml-md-auto">
+							<a class="nav-item nav-link" href="#"><i class="fa fa-slack"></i></a>
+							<a class="nav-item nav-link" href="#"><i class="fa fa-twitter"></i></a>
+							<a class="nav-item nav-link" href="#"><i class="fa fa-facebook"></i></a>
+						</div>
+					</nav>
+				</div>
+			</div>
+		</div>
+		<main>
+			<section>
+				<div class="container">
+					<div class="row align-items-center">
+						<div class="col align-self-center">
+							<div class="card bg-transparent">
+								<img class="card-img-top" alt="Card image cap" src="../assets/img/fdChicken.jpg">
+								<div class="card-body text-light">
+									<h5 class="card-title bg-transparent text-light">2 0z. Freeze-DriedChicken Breast Tenderloin</h5>
+									<p class="card-text">Some quick example&nbsp;</p>
+
+									<button id="checkout-button-sku_H4H9k9gnWLTuTK" class="btn btn-block btn-primary" role="link">
+										Checkout
+									</button>
+								</div>
+							</div>
+						</div>
+						<div class="col"></div>
+					</div>
+				</div>
+			</section>
+		</main>
+	</header>
+
+
+	<div id="error-message"></div>
+
+	<script>
+		(function() {
+  var stripe = Stripe('pk_test_XsQBmSGhyLQ1vU4iEpL2J5X200Ae1B8FGI');
+
+  var checkoutButton = document.getElementById('checkout-button-sku_H4H9k9gnWLTuTK');
+  checkoutButton.addEventListener('click', function () {
+    // When the customer clicks on the button, redirect
+    // them to Checkout.
+    stripe.redirectToCheckout({
+      items: [{sku: 'sku_H4H9k9gnWLTuTK', quantity: 1}],
+      
+      // Do not rely on the redirect to the successUrl for fulfilling
+      // purchases, customers may not always reach the success_url after
+      // a successful payment.
+      // Instead use one of the strategies described in
+      // https://stripe.com/docs/payments/checkout/fulfillment
+      successUrl: 'https://cmontreats.com/checkout/success.html',
+      cancelUrl: 'https://cmontreats.com/checkout/canceled.html',
+    })
+    .then(function (result) {
+      if (result.error) {
+        // If `redirectToCheckout` fails due to a browser or network
+        // error, display the localized error message to your customer.
+        var displayError = document.getElementById('error-message');
+        displayError.textContent = result.error.message;
+      }
+    });
+  });
+})();
+	</script>
+	<script src="../bootstrap/4/js/popper.min.js"></script>
+	<script src="../bootstrap/4/js/bootstrap.min.js"></script>
+</body>
+
+</html>

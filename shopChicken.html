@@ -1,0 +1,117 @@
+<!doctype html>
+<html>
+
+<head>
+	<script src="dmxAppConnect/dmxAppConnect.js"></script>
+	<meta charset="UTF-8">
+	<title>Untitled Document</title>
+	<script src="js/jquery-3.4.1.slim.min.js"></script>
+	<link rel="stylesheet" href="fontawesome4/css/font-awesome.min.css" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="bootstrap/4/css/bootstrap.min.css" />
+	<script src="dmxAppConnect/dmxBootstrap4Navigation/dmxBootstrap4Navigation.js" defer=""></script>
+</head>
+
+<body is="dmx-app" id="">
+	<section>
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-between">
+						<a class="navbar-brand mr-auto ml-auto" href="#">Navbar</a>
+						<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar1_collapse" aria-controls="navbar1_collapse" aria-expanded="false" aria-label="Toggle navigation">
+							<span class="navbar-toggler-icon"></span>
+						</button>
+						<div class="collapse navbar-collapse justify-content-center" id="navbar1_collapse">
+							<div class="navbar-nav">
+								<a class="nav-item nav-link active" href="#">Home</a>
+								<a class="nav-item nav-link" href="#">About</a>
+								<a class="nav-item nav-link" href="#">Contact</a>
+							</div>
+						</div>
+						<div class="navbar-nav justify-content-end d-none d-lg-flex ml-md-auto">
+							<a class="nav-item nav-link" href="#"><i class="fa fa-slack"></i></a>
+							<a class="nav-item nav-link" href="#"><i class="fa fa-twitter"></i></a>
+							<a class="nav-item nav-link" href="#"><i class="fa fa-facebook"></i></a>
+						</div>
+					</nav>
+				</div>
+			</div>
+		</div>
+		<div class="container bg-dark">
+			<div class="row bg-dark">
+				<div class="col bg-dark">
+					<div class="row bg-dark">
+						<div class="col-6 bg-dark">
+							<div class="card bg-dark">
+								<img class="card-img-top" alt="Card image cap" src="assets/img/food-1.jpg">
+								<div class="card-body text-lg-left">
+									<h4 class="card-title">Card title</h4>
+									<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+								</div>
+							</div>
+							<!-- Load Stripe.js on your website. -->
+							<script src="https://js.stripe.com/v3"></script>
+
+							<!-- Create a button that your customers click to complete their purchase. Customize the styling to suit your branding. -->
+							<center><button style="background-color:#6772E5;color:#FFF;padding:8px 12px;border:0;border-radius:4px;font-size:1em" id="checkout-button-plan_H4HHKz3OfeWd5g" role="link">
+									Checkout
+								</button></center>
+
+							<div id="error-message"></div>
+
+							<script>
+								(function() {
+  var stripe = Stripe('pk_test_XsQBmSGhyLQ1vU4iEpL2J5X200Ae1B8FGI');
+
+  var checkoutButton = document.getElementById('checkout-button-plan_H4HHKz3OfeWd5g');
+  checkoutButton.addEventListener('click', function () {
+    // When the customer clicks on the button, redirect
+    // them to Checkout.
+    stripe.redirectToCheckout({
+      items: [{plan: 'plan_H4HHKz3OfeWd5g', quantity: 1}],
+      
+      // Do not rely on the redirect to the successUrl for fulfilling
+      // purchases, customers may not always reach the success_url after
+      // a successful payment.
+      // Instead use one of the strategies described in
+      // https://stripe.com/docs/payments/checkout/fulfillment
+      successUrl: 'https://cmontreats.com/checkout/sucess.html',
+      cancelUrl: 'https://cmontreats.com/checkout/canceled.html',
+    })
+    .then(function (result) {
+      if (result.error) {
+        // If `redirectToCheckout` fails due to a browser or network
+        // error, display the localized error message to your customer.
+        var displayError = document.getElementById('error-message');
+        displayError.textContent = result.error.message;
+      }
+    });
+  });
+})();
+							</script>
+
+
+						</div>
+						<div class="col-6">
+							<div class="card">
+								<img class="card-img-top" alt="Card image cap">
+								<div class="card-body">
+									<h4 class="card-title">Card title</h4>
+									<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+									<a href="#" class="btn btn-primary">Go somewhere</a>
+								</div>
+							</div>
+						</div>
+						<div class="col-6"></div>
+						<div class="col-6"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<script src="bootstrap/4/js/popper.min.js"></script>
+	<script src="bootstrap/4/js/bootstrap.min.js"></script>
+</body>
+
+</html>

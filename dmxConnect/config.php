@@ -1,5 +1,5 @@
 <?php
 
-$CONFIG_DEBUG = true;
+$CONFIG_DEBUG = false;
 $CONFIG_SECRET_KEY = 'EvTbvxC581OUYPY';
 
