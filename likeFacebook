@@ -1,0 +1,11 @@
+<!-- Wappler include head-page="products.php" appConnect="local" is="dmx-app" bootstrap4="local" fontawesome_4="cdn" jquery_slim_33="cdn" -->
+<section class="container-fluid">
+		<div class="container">
+			<div class="row row-cols-12 text-body bg-primary">
+				<div class="mt-1 mb-2 text-sm-center align-self-sm-center offset-sm-0 col-sm-12 col text-center">
+					<div class="fb-like" data-href="https://www.facebook.com/cmontreats/" data-width="" data-layout="button_count" data-action="like" data-size="small" data-share="true"></div>
+
+				</div>
+			</div>
+		</div>
+	</section>

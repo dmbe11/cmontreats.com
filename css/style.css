@@ -1,31 +1,274 @@
-.wappler-temp {}
-.style1 {}
-.style2 {
-    margin-left: -49px;
-    margin-right: 72px
+/**
+ * The CSS shown here will not be introduced in the Quickstart guide, but shows
+ * how you can use CSS to style your Element's container.
+ */
+.StripeElement {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+
+  height: 40px;
+  width: 100%;
+  padding: 10px 12px;
+
+  border: 1px solid transparent;
+  border-radius: 4px;
+  background-color: white;
+
+  -webkit-box-shadow: 0 1px 3px 0 #e6ebf1;
+
+          box-shadow: 0 1px 3px 0 #e6ebf1;
+  -webkit-transition: -webkit-box-shadow 150ms ease;
+  transition: -webkit-box-shadow 150ms ease;
+  transition: box-shadow 150ms ease;
+  transition: box-shadow 150ms ease, -webkit-box-shadow 150ms ease;
 }
+
+.StripeElement--focus {
+  -webkit-box-shadow: 0 1px 3px 0 #cfd7df;
+          box-shadow: 0 1px 3px 0 #cfd7df;
+}
+
+.StripeElement--invalid {
+  border-color: #fa755a;
+}
+
+.StripeElement--webkit-autofill {
+  background-color: #fefde5 !important;
+}
+
+#payment-form {
+}
+
+.style1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  display: flex;
+  display: flex;
+  display: flex;
+  display: flex;
+  display: flex;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+}
+
+@media (min-width: 1200px) {
+
+.style2 {
+    text-align: center;
+  }
+
 .style3 {
-    padding-left: 0px;
+    width: 794px;
+    max-width: 800px;
+  }
+
+.style4 {
+    max-width: 800px;
+  }
+
+.style5 {
+    width: 794px;
+    max-width: 800px;
+    height: 763px;
+  }
+
+.style6 {
+    display: block;
+  }
+
+.style7 {
+    position: relative;
+  }
+
+.style11 {
+    height: 81px;
+  }
+
+.style9 {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-pack: start;
-        -ms-flex-pack: start
+  }
+
+.style12 {
+    position: -webkit-sticky;
+    position: sticky;
+  }
+
+.style10 {
+    margin-left: 106px;
+  }
+
+.style16 {
+    margin-left: 0px;
+  }
 }
-.style4 {
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: flex-start;
-            -webkit-box-orient: horizontal;
-            -webkit-box-direction: reverse;
-                -ms-flex-direction: row-reverse;
-                    flex-direction: row-reverse;
-                    display: none
+
+.style8 {
 }
-.style5 {}
-.style6 {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex
+
+.style9 {height: 90px;-webkit-box-align: stretch;-ms-flex-align: stretch;width: 350px;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-orient: horizontal;-webkit-box-align: center;-ms-flex-align: center;align-items: center;-ms-flex-wrap: wrap-reverse;
+}
+
+#salmonPurchase {
+}
+
+.style10 {
+  text-align: center;
+}
+
+@media (min-width: 992px) {
+
+.style9 {
+    width: 1022px;
+    min-width: 1023px;
+  }
+
+.style10 {
+    margin-left: 126px;
+  }
+}
+
+@media (min-width: 768px) {
+
+.style9 {
+    width: 770px;
+    min-width: 766px;
+  }
+
+.style12 {
+    max-width: 750px;
+    width: 660px;
+    height: 120px;
+    max-height: 118px;
+    min-height: 84px;
+    position: fixed;
+    left: 42px;
+    top: 0px;
+  }
+
+.style13 {
+    max-width: 750px;
+  }
+
+.style10 {
+    position: absolute;
+    left: 0px;
+  }
+
+.style15 {
+    width: 0px;
+    min-width: 669px;
+  }
+}
+
+@media (min-width: 576px) {
+
+.style9 {
+    width: 560px;
+  }
+
+.style10 {
+    position: absolute;
+    left: 0px;
+  }
+
+.style16 {
+    margin-left: 1px;
+  }
+
+.style20 {
+    position: absolute;
+  }
+}
+
+.style12 {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+          -webkit-box-pack: justify;
+              -ms-flex-pack: justify;
+                  justify-content: space-between;
+}
+
+.style14 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  display: flex;
+  display: flex;
+  display: flex;
+  display: flex;
+  display: flex;
+  display: flex;
+  display: flex;
+  display: flex;
+  display: flex;
+  display: flex;
+  position: absolute;
+  top: 0px;
+  text-align: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+                                              -ms-flex-pack: distribute;
+                                                  justify-content: space-around;
+              -webkit-box-align: baseline;
+                  -ms-flex-align: baseline;
+}
+
+.style16 {
+  margin-left: 0px;
+}
+
+.style17 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  display: flex;
+  display: flex;
+  display: flex;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+          -webkit-box-pack: center;
+              -ms-flex-pack: center;
+                  justify-content: center;
+                  -ms-flex-wrap: wrap-reverse;
+                      flex-wrap: wrap-reverse;
+                      -ms-flex-line-pack: distribute;
+}
+
+.style18 {
+  overflow: visible;
+  display: inline;
+}
+
+.style19 {
+  width: 90%;
+}
+
+.style21 {
+  color: #df691a;
+}
+
+.style22 {
+  text-align: center;
+  margin-top: 9px;
+  font-size: 26px;
+  color: #f5eaea;
+  background-color: #5bc0de;
+}
+
+.style23 {
+}
+
+.style24 {
+  width: 145px;
+  min-width: 116px;
+  max-width: 175px;
 }

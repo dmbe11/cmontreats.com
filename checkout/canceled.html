@@ -16,24 +16,21 @@
 	<link rel="stylesheet" href="../fontawesome4/css/font-awesome.min.css" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link rel="stylesheet" href="../bootstrap/4/css/bootstrap.min.css" />
+	<script src="../dmxAppConnect/dmxBootstrap4Navigation/dmxBootstrap4Navigation.js" defer=""></script>
 </head>
 
 <body is="dmx-app" id="canceled">
+	<?php include '../header.php'; ?>
 	<div class="sr-root">
 		<div class="sr-main">
-			<header class="sr-header">
-				<div class="sr-header__logo"></div>
-			</header>
+
 			<div class="sr-payment-summary completed-view">
-				<h1>Your payment was canceled</h1>
+				<h1 class="mt-5">Your payment was canceled</h1>
 				<h4>Checkout Session ID: <span id="session"></span></h4>
+				<p class="text-black-50 lead">Please try again or please <a href="../contact.html">let us know</a> if you need any help.</p>
 			</div>
 			<div class="sr-content">
 				<div class="pasha-image-stack">
-					<img src="https://picsum.photos/280/320?random=1" width="140" height="160" />
-					<img src="https://picsum.photos/280/320?random=2" width="140" height="160" />
-					<img src="https://picsum.photos/280/320?random=3" width="140" height="160" />
-					<img src="https://picsum.photos/280/320?random=4" width="140" height="160" />
 				</div>
 			</div>
 		</div>

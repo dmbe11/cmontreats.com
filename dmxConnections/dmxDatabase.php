@@ -159,18 +159,18 @@ function getAllTables() {
 	$tables = array();
 
 	if ($driver == 'sqlite') {
-		$results = getResult("SELECT name FROM sqlite_master WHERE type = 'table'");
+		$results = getResult("SELECT name FROM sqlite_master WHERE type = 'table' and name != 'sqlite_sequence' and name not like 'wappler_%'");
 
 		foreach ($results as $result) {
 			$tables[] = $result['name'];
 		}
 	} else {
 		if ($driver == 'mysql') {
-			$results = getResult("SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = '$database' AND TABLE_TYPE = 'BASE TABLE'");
+			$results = getResult("SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = '$database' AND TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME NOT LIKE 'wappler_%'");
 		} elseif ($driver == 'pgsql') {
-			$results = getResult("SELECT TABLE_NAME AS \"TABLE_NAME\" FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'public' AND TABLE_CATALOG = '$database' AND TABLE_TYPE = 'BASE TABLE'");
+			$results = getResult("SELECT TABLE_NAME AS \"TABLE_NAME\" FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'public' AND TABLE_CATALOG = '$database' AND TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME NOT LIKE 'wappler_%'");
 		} else {
-			$results = getResult("SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_CATALOG = '$database' AND TABLE_TYPE = 'BASE TABLE'");
+			$results = getResult("SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_CATALOG = '$database' AND TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME NOT LIKE 'wappler_%'");
 		}
 
 		foreach ($results as $result) {
@@ -413,7 +413,12 @@ function getProc($proc_name) {
 function getResult($sql) {
 	global $driver, $dsn, $user, $password, $sslca, $sslverify;
 	try {
-		$pdo = new PDO($dsn, $user, $password);
+		if ($driver == 'sqlite' && !preg_match('(/^sqlite:\//|:\/)', $dsn)) {
+			$new_dsn = str_replace('sqlite:', 'sqlite:'. $_SERVER['DOCUMENT_ROOT'] . '/', $dsn);
+			$pdo = new PDO($new_dsn, $user, $password);			
+		} else {
+			$pdo = new PDO($dsn, $user, $password);
+		}
 
 		if ($driver == 'mysql') {
 			if (version_compare(PHP_VERSION, '5.3.7', '>=') && $sslca) {

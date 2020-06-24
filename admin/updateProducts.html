@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+
+<head>
+	<script src="../dmxAppConnect/dmxAppConnect.js"></script>
+	<meta charset="UTF-8">
+	<title>Untitled Document</title>
+	<script src="../js/jquery-3.4.1.slim.min.js"></script>
+	<link rel="stylesheet" href="../fontawesome4/css/font-awesome.min.css" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="../bootstrap/4/css/bootstrap.min.css" />
+	<script src="../dmxAppConnect/dmxBootstrap4Navigation/dmxBootstrap4Navigation.js" defer=""></script>
+</head>
+1111
+
+. Buy for $<span id="total">9.99</span>
+
+Buy for $<span id="total">9.99</sp2<body is="dmx-app" id="updateProducts">
+	<section>
+		<div class="container">
+			<nav class="navbar navbar-expand-lg bg-transparent text-light navbar-dark">
+				<a class="navbar-brand mr-auto" href="#">
+					<img src="../assets/img/CmonLogoSM.png" class="w-25 h-25 bg-light">
+				</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar1_collapse" aria-controls="navbar1_collapse" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbar1_collapse">
+					<div class="navbar-nav">
+						<a class="nav-item nav-link active" href="#">Home</a>
+						<a class="nav-item nav-link" href="#">About</a>
+						<a class="nav-item nav-link" href="#">Contact</a>
+					</div>
+				</div>
+			</nav>
+			<div class="row">
+				<div class="col" is="dmx-background-video" id="bgvideo1" src="../assets/vid/DogBGVDmp4.mp4">
+
+					<form is="dmx-serverconnect-form" id="serverconnectform1" method="post" action="../dmxConnect/api/updateProducts.php" dmx-generator="bootstrap4" dmx-form-type="vertical" dmx-on:success="bgvideo1.serverconnectform1.reset()">
+						<div class="form-group">
+							<label for="inp_name">Name</label>
+							<input type="text" class="form-control" id="inp_name" name="name" aria-describedby="inp_name_help" placeholder="Enter Name">
+						</div>
+						<div class="form-group">
+							<label for="inp_sku">Sku</label>
+							<input type="text" class="form-control" id="inp_sku" name="sku" aria-describedby="inp_sku_help" placeholder="Enter Sku">
+						</div>
+						<div class="form-group">
+							<label for="inp_inventory">Inventory</label>
+							<input type="text" class="form-control" id="inp_inventory" name="inventory" aria-describedby="inp_inventory_help" placeholder="Enter Inventory">
+						</div>
+						<div class="form-group">
+							<label for="inp_batch">Batch</label>
+							<input type="text" class="form-control" id="inp_batch" name="batch" aria-describedby="inp_batch_help" placeholder="Enter Batch">
+						</div>
+						<div class="form-group">
+							<label for="inp_date">Date</label>
+							<input type="date" class="form-control" id="inp_date" name="date" aria-describedby="inp_date_help" placeholder="Enter Date">
+						</div>
+						<div class="form-group text-center">
+							<button type="submit" class="btn btn-primary order-first align-self-center mr-2">Save</button><button type="reset" class="btn btn-secondary order-2 align-self-center ml-2">Reset</button>
+						</div>
+
+					</form>
+				</div>
+			</div>
+		</div>
+	</section>
+	<script src="../bootstrap/4/js/popper.min.js"></script>
+	<script src="../bootstrap/4/js/bootstrap.min.js"></script>
+	</body>
+
+</html>

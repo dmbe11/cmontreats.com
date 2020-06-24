@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+
+<head>
+	<script src="../dmxAppConnect/dmxAppConnect.js"></script>
+	<meta charset="UTF-8">
+	<title>Fullfillment</title>
+	<script src="../js/jquery-3.4.1.slim.min.js"></script>
+	<link rel="stylesheet" href="../fontawesome4/css/font-awesome.min.css" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="../bootstrap/4/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="../assets/fonts/stylesheet.css" />
+	<link rel="stylesheet" href="../css/style.css" />
+	<script src="../dmxAppConnect/dmxBootstrap4Navigation/dmxBootstrap4Navigation.js" defer=""></script>
+	<link rel="stylesheet" href="../dmxAppConnect/dmxBootstrap4TableGenerator/dmxBootstrap4TableGenerator.css" />
+</head>
+
+<body class="style21" is="dmx-app" id="fullfillment">
+	<dmx-serverconnect id="serverconnect1" url="../dmxConnect/api/paypal/webhooks.php"></dmx-serverconnect>
+	<section>
+		<div class="container bg-transparent">
+			<div class="row bg-transparent">
+				<div class="col">
+					<nav class="navbar navbar-expand-lg navbar-light navbar-expand ml-auto bg-transparent">
+						<a class="navbar-brand text-primary bg-transparent lead" href="../index.html">
+							<img src="../assets/img/CmonLogoSM.png" class="w-50 img-fluid img-thumbnail">Navbar</a>
+						<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar1_collapse" aria-controls="navbar1_collapse" aria-expanded="false" aria-label="Toggle navigation">
+							<span class="navbar-toggler-icon"></span>
+						</button>
+						<div class="collapse navbar-collapse ml-auto bg-transparent" id="navbar1_collapse">
+							<div class="navbar-nav ml-auto">
+								<a class="nav-item nav-link active text-left text-primary lead" href="../index.html">Home</a>
+								<a class="nav-item nav-link text-primary lead" href="#">Products</a>
+								<a class="nav-item nav-link lead text-primary" href="#">Contact</a>
+								<a class="nav-item nav-link lead text-primary" href="#">Purchase</a>
+								<a class="nav-item nav-link lead text-primary" href="#">Benefits</a>
+							</div>
+						</div>
+					</nav>
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<table class="table">
+						<thead>
+							<tr>
+								<th>Id</th>
+								<th>Url</th>
+								<th>Event types</th>
+								<th>Links</th>
+							</tr>
+						</thead>
+						<tbody is="dmx-repeat" dmx-generator="bs4table" dmx-bind:repeat="serverconnect1.data.api1.data.webhooks" id="tableRepeat1">
+							<tr>
+								<td dmx-text="id"></td>
+								<td dmx-text="url"></td>
+								<td dmx-text="event_types"></td>
+								<td dmx-text="links"></td>
+							</tr>
+						</tbody>
+					</table>
+					</table>
+				</div>
+			</div>
+		</div>
+	</section>
+	<script src="../bootstrap/4/js/popper.min.js"></script>
+	<script src="../bootstrap/4/js/bootstrap.min.js"></script>
+</body>
+
+</html>

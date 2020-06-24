@@ -1,0 +1,14 @@
+{
+  "prodCatalog.html": {
+    "thumb": "/Ecommerce/Catalog 1.svg"
+  },
+  "cmonCatalog.html": {
+    "thumb": "/Ecommerce/Catalog 1.svg"
+  },
+  "checkout.php": {
+    "thumb": "/Ecommerce/Checkout.svg"
+  },
+  "header.php": {
+    "thumb": "/Main page/Header with image 3.svg"
+  }
+}

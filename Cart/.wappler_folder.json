@@ -1,0 +1,10 @@
+{
+  "index.php": {
+    "layoutPage": "",
+    "description": "stripe cart landing page"
+  },
+  "stripeCheckout.php": {
+    "layoutPage": "",
+    "description": ""
+  }
+}
