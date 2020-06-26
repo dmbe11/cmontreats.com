@@ -6,11 +6,7 @@ $app = new \lib\App();
 
 $app->define(<<<'JSON'
 {
-  "settings": {
-    "options": {}
-  },
   "meta": {
-    "options": {},
     "$_GET": [
       {
         "type": "text",
@@ -24,7 +20,7 @@ $app->define(<<<'JSON'
   },
   "exec": {
     "steps": [
-      "Connections/db",
+      "file:///Users/danielbell/webroot/cmontreats/dmxConnect/modules/Connections/db",
       {
         "name": "shopQ",
         "module": "dbconnector",

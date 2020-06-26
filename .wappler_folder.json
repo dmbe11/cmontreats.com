@@ -1,5 +1,9 @@
 {
   "cmonTemplate.html": {
     "thumb": "/Ecommerce/Catalog 1.svg"
+  },
+  "Resources.php": {
+    "layoutPage": "",
+    "description": ""
   }
 }

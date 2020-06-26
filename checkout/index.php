@@ -78,7 +78,7 @@
 
 		<div class="row ml-xl-auto mr-xl-auto justify-content-xl-center row-cols-12 text-left no-gutters" is="dmx-repeat" id="Repeat1" dmx-bind:repeat="scProducts.data.productQuery">
 			<div class="col-sm-12 col-md-6 col-lg-6 align-self-xl-center col-xl-6 w-auto col-12">
-				<div class="card border border-dark text-center">
+				<div class="card border border-dark text-center ml-1 mr-1">
 
 					<img class="card-img-top" dmx-bind:src="pictureURL">
 					<div class="card-body text-center bg-info">
@@ -92,6 +92,9 @@
 		</div>
 
 
+	</section>
+	<section class="mt-2 border rounded border-dark rounded-lg bg-primary">
+		<?php include '../likeFacebook.php'; ?>
 	</section>
 
 	<script src="../bootstrap/4/js/popper.min.js"></script>

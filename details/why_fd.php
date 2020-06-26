@@ -16,6 +16,7 @@
 	<script src="../dmxAppConnect/dmxAnimateCSS/dmxAnimateCSS.js" defer=""></script>
 	<script src="../dmxAppConnect/dmxCharts/Chart.min.js" defer=""></script>
 	<script src="../dmxAppConnect/dmxCharts/dmxCharts.js" defer=""></script>
+	<script src="../dmxAppConnect/dmxFormatter/dmxFormatter.js" defer=""></script>
 </head>
 
 <body id="cmonTemplate" is="dmx-app">
@@ -38,16 +39,15 @@
 						<div class="container text-primary">
 							<div class="row">
 								<div class="col">
+
 									<h1 class="text-primary text-center">Benefits of C'MoN Gourmet Treats</h1>
 									<p class="text-light">All C'MoN Gourmet Treats are single ingredient and freeze dried with a remarkably long shelf life and can be stored for 25 or more years. Once opened the contents can last up to 12 months
 										when stored in the original container, in a cool location.</p>
+									<dmx-chart id="chart1" dataset-1="" point-size="" type="bar" legend="left" dmx-bind:data="serverconnect1.data.dataStorageQuery" labels="years"></dmx-chart>
 								</div>
 							</div>
 						</div>
 					</section>
-					<dmx-chart id="chart1" width="400" height="300" responsive point-size="" type="horizontalBar" multicolor thickness="6" dmx-bind:data="serverconnect1.data.dataStorageQuery" labels="storageProcess" dataset-1:value="years"
-						colors="colors3" dataset-1:label="Years" legend="left">
-					</dmx-chart>
 				</div>
 			</div>
 			</div>

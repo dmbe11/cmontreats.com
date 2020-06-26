@@ -20,7 +20,6 @@ $app->define(<<<'JSON'
   },
   "exec": {
     "steps": [
-      "Connections/db",
       {
         "name": "productQuery",
         "module": "dbconnector",
@@ -171,7 +170,8 @@ $app->define(<<<'JSON'
         ],
         "outputType": "array",
         "output": true
-      }
+      },
+      "Connections/db"
     ]
   }
 }

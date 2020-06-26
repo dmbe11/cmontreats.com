@@ -330,7 +330,70 @@ dmx.config({
       "outputType": "array"
     }
   },
-  "index": {
+  "shopProducts": {
+    "repeat1": {
+      "meta": [
+        {
+          "name": "id",
+          "type": "number"
+        },
+        {
+          "name": "name",
+          "type": "text"
+        },
+        {
+          "name": "Description",
+          "type": "text"
+        },
+        {
+          "name": "price",
+          "type": "text"
+        },
+        {
+          "name": "size",
+          "type": "text"
+        },
+        {
+          "name": "sku",
+          "type": "text"
+        },
+        {
+          "name": "quantity",
+          "type": "text"
+        },
+        {
+          "name": "inventory",
+          "type": "text"
+        },
+        {
+          "name": "pictureURL",
+          "type": "text"
+        },
+        {
+          "name": "batch",
+          "type": "text"
+        },
+        {
+          "name": "date",
+          "type": "datetime"
+        },
+        {
+          "name": "checkout",
+          "type": "text"
+        },
+        {
+          "name": "UPC",
+          "type": "text"
+        },
+        {
+          "name": "buyurl",
+          "type": "text"
+        }
+      ],
+      "outputType": "array"
+    }
+  },
+  "store": {
     "cart": [
       {
         "type": "text",
@@ -390,69 +453,6 @@ dmx.config({
         {
           "name": "inventory",
           "type": "number"
-        },
-        {
-          "name": "pictureURL",
-          "type": "text"
-        },
-        {
-          "name": "batch",
-          "type": "text"
-        },
-        {
-          "name": "date",
-          "type": "datetime"
-        },
-        {
-          "name": "checkout",
-          "type": "text"
-        },
-        {
-          "name": "UPC",
-          "type": "text"
-        },
-        {
-          "name": "buyurl",
-          "type": "text"
-        }
-      ],
-      "outputType": "array"
-    }
-  },
-  "shopProducts": {
-    "repeat1": {
-      "meta": [
-        {
-          "name": "id",
-          "type": "number"
-        },
-        {
-          "name": "name",
-          "type": "text"
-        },
-        {
-          "name": "Description",
-          "type": "text"
-        },
-        {
-          "name": "price",
-          "type": "text"
-        },
-        {
-          "name": "size",
-          "type": "text"
-        },
-        {
-          "name": "sku",
-          "type": "text"
-        },
-        {
-          "name": "quantity",
-          "type": "text"
-        },
-        {
-          "name": "inventory",
-          "type": "text"
         },
         {
           "name": "pictureURL",
